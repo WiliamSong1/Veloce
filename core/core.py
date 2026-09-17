@@ -1,7 +1,7 @@
 import re
 from dataclasses import dataclass
-from tokenCounter import tokenCount
-from rules import optimization_rules
+from .tokenCounter import tokenCount
+from .rules import optimization_rules
 
 @dataclass
 class Veloce:
