@@ -1,6 +1,7 @@
 import re
 from dataclasses import dataclass
 from tokenCounter import tokenCount
+from rules import optimization_rules
 
 @dataclass
 class Veloce:
@@ -17,9 +18,12 @@ def optimizer(prompt):
 
     optimizedPrompt = prompt
     optimizedPrompt = re.sub(r"\s{2,}", " ", optimizedPrompt)
-    optimizedPrompt = re.sub(r"\bplease\b", "", optimizedPrompt, flags =re.IGNORECASE)
-    optimizedPrompt = re.sub(r"\bI would like you to\b", "", optimizedPrompt, flags =re.IGNORECASE)
-    optimizedPrompt = re.sub(r"\bcould you\b", "", optimizedPrompt, flags =re.IGNORECASE)
+
+
+
+    for key, value in optimization_rules.items():
+        pattern = re.escape(key)
+        optimizedPrompt = re.sub(pattern, value, optimizedPrompt, flags=re.IGNORECASE)
     optimizedPrompt = optimizedPrompt.strip()
 
     final_prompt_token_count = tokenCount(optimizedPrompt)
@@ -33,3 +37,4 @@ test1 = optimizer("I would     like you     to     please build a     calculator
 
 print(test1.raw_text_token_count)
 print(test1.tokens_saved)
+print(test1.optmizedPrompt)
