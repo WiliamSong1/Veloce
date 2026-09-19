@@ -33,8 +33,4 @@ def optimizer(prompt):
 
     return optimizedPromptOBJ
 
-test1 = optimizer("I would     like you     to     please build a     calculator")
 
-print(test1.raw_text_token_count)
-print(test1.tokens_saved)
-print(test1.optmizedPrompt)
