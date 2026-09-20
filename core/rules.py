@@ -1,1 +1,1 @@
-optimization_rules = {"please": "", "in order to": "to", "I would like you to": "", "could you":""}
+optimization_rules = {"please": "", "in order to": "to", "I would like you to": "", "could you":"", "thank you": ""}
