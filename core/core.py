@@ -1,7 +1,8 @@
 import re
 from dataclasses import dataclass
 from .tokenCounter import tokenCount
-from .rules import optimization_rules
+from .rules import removal_rules, compression_rules
+
 
 @dataclass
 class Veloce:
@@ -21,7 +22,10 @@ def optimizer(prompt):
 
 
 
-    for key, value in optimization_rules.items():
+    for key, value in removal_rules.items():
+        pattern = re.escape(key)
+        optimizedPrompt = re.sub(pattern, value, optimizedPrompt, flags=re.IGNORECASE)
+    for key, value in compression_rules.items():
         pattern = re.escape(key)
         optimizedPrompt = re.sub(pattern, value, optimizedPrompt, flags=re.IGNORECASE)
     optimizedPrompt = optimizedPrompt.strip()
