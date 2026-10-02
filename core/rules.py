@@ -1,5 +1,5 @@
 removal_rules = {"please": "", "I would like you to": "", "could you":"", "thank you": "","feel free to":"",
-                 "as a matter of fact":"", "needless to say":""
+                 "as a matter of fact":"", "needless to say":"","I was wondering if":""
                  }
 
 compression_rules = {"in order to": "to", "due to the fact":"because", "at this point in time": "now",
