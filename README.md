@@ -110,7 +110,7 @@ Veloce/
 Clone the repository:
 
 ```bash
-git clone <https://github.com/WiliamSong1/Veloce.git>
+git clone https://github.com/WiliamSong1/Veloce.git
 cd Veloce
 ```
 
